@@ -1,0 +1,19 @@
+{
+  "status": "draft",
+  "client": "Acme Studio",
+  "summary": "Deploy a single Node API on Render with auto-deploy, staging, custom HTTPS domain and handover doc.",
+  "deliverables": [
+    "render.yaml",
+    "GitHub Actions CI",
+    "staging service",
+    "custom domain + HTTPS",
+    "handover doc"
+  ],
+  "risks": [
+    "DNS access needed from client"
+  ],
+  "package": "advanced",
+  "price_usd": 950,
+  "timeline_days": 6,
+  "note": "AI-generated draft. Review before sending to client."
+}

@@ -1,0 +1,1 @@
+{"client":"Acme Studio","requirement":"We have a Node API in one GitHub repo. We need it deployed on Render with automatic deploys from GitHub, a staging environment, HTTPS on our own domain, and a short handover doc."}
