@@ -12,8 +12,8 @@
   "risks": [
     "DNS access needed from client"
   ],
-  "package": "advanced",
-  "price_usd": 950,
+  "package": "plus",
+  "price_usd": 899,
   "timeline_days": 6,
   "note": "AI-generated draft. Review before sending to client."
 }

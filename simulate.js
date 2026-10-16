@@ -5,7 +5,7 @@ const input = JSON.parse(fs.readFileSync(__dirname + '/sample-input.json'));
 const mock = http.createServer((req, res) => {
   let b = ''; req.on('data', d => b += d); req.on('end', () => {
     const r = JSON.parse(b); assert(r.messages.length === 2 && r.response_format);
-    const reply = { summary: 'Deploy a single Node API on Render with auto-deploy, staging, custom HTTPS domain and handover doc.', deliverables: ['render.yaml','GitHub Actions CI','staging service','custom domain + HTTPS','handover doc'], risks: ['DNS access needed from client'], package: 'advanced', price_usd: 950, timeline_days: 6 };
+    const reply = { summary: 'Deploy a single Node API on Render with auto-deploy, staging, custom HTTPS domain and handover doc.', deliverables: ['render.yaml','GitHub Actions CI','staging service','custom domain + HTTPS','handover doc'], risks: ['DNS access needed from client'], package: 'plus', price_usd: 950, timeline_days: 6 };
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify({ choices: [{ message: { content: JSON.stringify(reply) } }] }));
   });
@@ -24,7 +24,7 @@ const mock = http.createServer((req, res) => {
   prev = [{ json: await r.json() }];
   const out = await exec('Parse Quote');
   console.log(JSON.stringify(out[0].json, null, 2));
-  assert.equal(out[0].json.status, 'draft'); assert(out[0].json.price_usd >= 350 && out[0].json.price_usd <= 1200);
+  assert.equal(out[0].json.status, 'draft'); assert.equal(out[0].json.price_usd, 899); assert.equal(out[0].json.package, 'plus');
   fs.writeFileSync(__dirname + '/sample-output.json', JSON.stringify(out[0].json, null, 2));
   // negative: empty requirement
   prev = [{ json: { body: {} } }];
